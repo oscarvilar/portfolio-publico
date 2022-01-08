@@ -1,0 +1,24 @@
+import './productList.css';
+import '../product/Product';
+import Product from '../product/Product';
+import {products} from "../../data";
+
+const ProductList = () => {
+    return (
+        <div className="pl">
+            <div className="pl-texts">
+                <h1 className="pl-title">Portfolio</h1>
+                <p className="pl-desc">
+                    Aqui podras ver algunos de los proyectos en los que he trabajado.
+                </p>
+            </div>
+            <div className="pl-list">
+                {products.map(item=>(
+                    <Product key={item.id} img={item.img} link={item.link}/>
+                ))}
+            </div>
+        </div>
+    )
+}
+
+export default ProductList
